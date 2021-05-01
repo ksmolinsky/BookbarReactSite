@@ -1,0 +1,87 @@
+
+.jumbotron {
+  margin: 0;
+  padding: 30px;
+  background-image: linear-gradient(to right, #1d976c, #93f939);
+  color: white;
+  font-family: 'Redressed';
+}
+
+.navbar {
+  background-image: linear-gradient(to right, black, #434343);
+  color: white;
+}
+
+.site-footer {
+  background-image: linear-gradient(to right, black, #434343);
+  padding: 20px 0;
+  margin-top: 20px;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  text-decoration-style: solid;
+  font-size: 40px;
+}
+
+.nav-link {
+  margin: 0px 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+}
+
+a {
+  margin: 2px;
+}
+
+.footer-links {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-sm {
+  padding: 2px;
+}
+
+.fa {
+  color: white;
+}
+
+.carouselImage {
+  width: auto;
+  height: 600px;
+  max-height: 600px;
+}
+
+.row-content {
+  padding: 50px 0;
+  border-bottom: 1px ridge;
+  min-height: 200px;
+}
+
+
+.carouselCaption {
+  background-color: darkgray;
+}
+
+.bestSellersImage {
+  width: auto;
+  height: auto;
+  max-height: 500px;
+  padding: 50px;
+}
+
+.OurStoryTitle {
+  padding: 40px;
+  text-decoration: solid underline;
+}
+
+.directions{ 
+  padding: 65px;
+}
+
+.event-info {
+  padding: 20px;
+  font-size: 20px;
+}
