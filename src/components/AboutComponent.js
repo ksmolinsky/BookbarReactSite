@@ -37,7 +37,7 @@ class AboutUs extends Component {
                     <div className="col-12">
                         <h2 className="OurStoryTitle text-center">Location and Contact info</h2>
                     </div>
-                    <div className="col-6">
+                    <div className="col-6"> 
                         <h2>Address</h2>
                         <a className="btn btn-link" href="https://goo.gl/maps/GbNkhVdp5B1pat2PA">
                         14052 E Iowa Dr <br/>
