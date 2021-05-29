@@ -85,3 +85,17 @@ a {
   padding: 20px;
   font-size: 20px;
 }
+
+.menu-title {
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 20px;
+} 
+
+.menu-main {
+ font-size: 75px;
+ font-family: Redressed, sans-serif;
+  padding: 20px;
+ text-align: center;
+ text-decoration-style: solid;
+}

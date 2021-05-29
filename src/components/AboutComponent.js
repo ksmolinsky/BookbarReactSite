@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Card, CardBody } from 'reactstrap';
+import { Card, CardBody, Button } from 'reactstrap';
 
 
 class AboutUs extends Component {
-    constructor(props) {
-    super(props);
-    this.state={
+  
 
-    };
-    };
     render() {
         return (
             <React.Fragment>
@@ -39,22 +35,22 @@ class AboutUs extends Component {
                     </div>
                     <div className="col-6"> 
                         <h2>Address</h2>
-                        <a className="btn btn-link" href="https://goo.gl/maps/GbNkhVdp5B1pat2PA">
+                        <Button className="btn" href="https://goo.gl/maps/GbNkhVdp5B1pat2PA">
                         14052 E Iowa Dr <br/>
                          Aurora, CO 80012 <br/>
-                        </a>
+                        </Button>
                         <h2>Bookstore Information</h2>
-                        <a role="button" className="btn btn-md btn-link" href="tel:+13032334455">(303)-233-4455<i className="fa fa-phone"></i></a>
+                        <Button className="btn" href="tel:+13032334455">(303)-233-4455</Button>
                         <br/>
-                        <a role="button" className="btn btn-link" href="mailto:kbookstore@gmail.com">kbookstore@gmail.com<i className="fa fa-envelope-o"></i></a>
+                        <Button className="btn" href="mailto:kbookstore@gmail.com">kbookstore@gmail.com</Button>
                         <h2>Restaurant Information</h2>
-                        <a role="button" className="btn btn-link" href="tel:+13032334456">(303)233-4456<i className="fa fa-phone"></i></a>
+                        <Button className="btn" href="tel:+13032334456">(303)233-4456</Button>
                         <br/>
-                        <a role="button" className="btn btn-link" href="mailto:krestaurant@gmail.com">krestaurant@gmail.com<i className="fa fa-envelope-o"></i></a>
+                        <Button className="btn" href="mailto:krestaurant@gmail.com">krestaurant@gmail.com</Button>
                         <h2>Events Information</h2>
-                        <a role="button" className="btn btn-link" href="tel:13032334456">(303)233-4456<i className="fa fa-phone"></i></a>
+                        <Button className="btn" href="tel:13032334456">(303)233-4456</Button>
                         <br/>
-                        <a role="button" className="btn btn-link" href="mailto:krestaurant@gmail.com">krestauraunt@gmail.com<i className="fa fa-envelope-o"></i></a>
+                        <Button className="btn" href="mailto:krestaurant@gmail.com">krestauraunt@gmail.com</Button>
                     </div>
                     <div class="col-6">
                         <div className="directions">
@@ -65,6 +61,13 @@ class AboutUs extends Component {
                             <h2>By Car:</h2>
                             <p className="event-info">Take I-25 to I-225 and turn left at the Florida light. The bookstore will be on your left.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col" map>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12282.029338085242!2d-104.82904720719446!3d39.683295646168666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3c7bf6ce3f94eb86!2sFlorida%20Station%20Apartments!5e0!3m2!1sen!2sus!4v1615859196474!5m2!1sen!2sus" width="100%" height="450" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>

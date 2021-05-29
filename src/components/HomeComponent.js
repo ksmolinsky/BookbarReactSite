@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Card, CardBody, CardHeader, CardText } from 'reactstrap';
 import MainCarousel from './MainCarouselComponent';
 import NewReleaseCarousel from './NewReleaseCarouselComponent';
