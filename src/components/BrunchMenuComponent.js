@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
+import { FadeTransform } from 'react-animation-components';
 
 class BrunchMenu extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: 'React'
+        }
+    }
     
     render() {
         return (
         <React.Fragment>
+            <FadeTransform
+                         in
+                            transformProps={{
+                                exitTransform: 'scale(0.5) translateY(50%)'
+                            }}>
             <div className="container my-3 py-3 border border-dark bg-light">
             <h1 className="menu-main">Brunch</h1>
             <h2 className="menu-title">Everyday until 1PM</h2>
@@ -42,6 +54,7 @@ class BrunchMenu extends Component {
                     </div>
                 </div>
             </div>
+            </FadeTransform>
         </React.Fragment>
         )
     }

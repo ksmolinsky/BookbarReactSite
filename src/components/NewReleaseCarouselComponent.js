@@ -77,12 +77,12 @@ class NewReleaseCarousel extends Component {
 				<Carousel
 					activeIndex={activeIndex}
 					next={this.next}
-					previous={this.previous}
+					previous={this.previous}s
 				>
 					<CarouselIndicators items={NRitems} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
 					{slides}
 					<CarouselControl direction='prev' directionText='Previous' onClickHandler={this.previous} />
-					<CarouselControl direction='next' directionText='Next' onClickHandler={this.next} />
+					<CarouselControl direction='next' directionText='Next' onClickHandler={this.next}  />
 				</Carousel>
 			</div>
 		);
