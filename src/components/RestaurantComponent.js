@@ -51,12 +51,21 @@ class Restaurant extends Component {
         }
     }
 
+
+
     toggleModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         })
     }
 
+
+    handleReservation(event) {
+        alert("Your Reservation is booked!");
+        this.toggleModal();
+        event.preventDefault();
+        
+    }
 
     render() {
         const { showBrunchMenu, showAllDayMenu, showHHMenu } = this.state;
