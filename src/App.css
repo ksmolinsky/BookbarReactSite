@@ -134,3 +134,20 @@ a {
   color: white;
 }
 
+.eventimg {
+  max-width: 400px;
+  height: 350px;
+}
+
+.event-info {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.hosteventimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+
+}
