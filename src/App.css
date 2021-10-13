@@ -151,3 +151,8 @@ a {
   width: 85%;
 
 }
+
+.EventHeader {
+  background-color: green;
+  color: white;
+}
