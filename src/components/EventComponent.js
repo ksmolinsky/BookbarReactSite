@@ -8,21 +8,21 @@ class Events extends Component {
     super(props);
     this.state = {
         isModalOpen: false,
-        setRSelected: null,
-        rSelected: null
         }
         this.toggleModal = this.toggleModal.bind(this);
-        this.setRSelected = this.setRSelected.bind(this);
-    }
-
-    setRSelected(rSelected) {
-        this.setState({ rSelected });
     }
 
     toggleModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         })
+    }
+
+    handleEventRequest(event) {
+        alert("Thank you for your interest! Our Event Manager will be in contact with you shortly!");
+        this.toggleModal();
+        event.preventDefault();
+        
     }
 
     render() {
@@ -89,49 +89,65 @@ class Events extends Component {
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                         <ModalHeader className="EventHeader" toggle={this.toggleModal}>Event Request Form</ModalHeader>
                         <ModalBody>
-                            <Form>
+                            <Form onSubmit={this.handleEventRequest}>
                                 <FormGroup row>
-                                    <Label htmlfor="name" sm={6}>Name</Label>
-                                    <Input type="text" name="name" id="name" />
+                                    <Label htmlfor="name" sm={3}>Name</Label>
+                                    <Col sm={9}>
+                                        <Input type="text" name="name" id="name" />
+                                    </Col>
                                 </FormGroup>
-                                <FormGroup>
-                                     <Label htmlfor="PhoneNumber">Contact Tel.</Label>
-                                     <Input type="tel" name="tel" id="tel"/>
+                                <FormGroup row>
+                                     <Label htmlfor="PhoneNumber" sm={3}>Contact Tel.</Label>
+                                     <Col sm={9}>
+                                        <Input type="tel" name="tel" id="tel"/>
+                                     </Col>
                                 </FormGroup>
-                                <FormGroup>
-                                     <Label htmlfor="email">Email</Label>
-                                     <Input type="email" name="email" id="email" />
+                                <FormGroup row>
+                                     <Label htmlfor="email" sm={3}>Email</Label>
+                                     <Col sm={9}>
+                                        <Input type="email" name="email" id="email" />
+                                     </Col>
                                 </FormGroup>
-                                <FormGroup>
-                                    <Label htmlfor="eventSize">Event Size</Label>
-                                    <Input type="number" name="eventSize" id="eventSize" /> 
+                                <FormGroup row>
+                                    <Label htmlfor="eventSize" sm={3}>Event Size</Label>
+                                    <Col sm={9}>
+                                        <Input type="number" name="eventSize" id="eventSize" />
+                                    </Col>
                                 </FormGroup>
-                                <FormGroup>
-                                    <Label htmlfor="eventDate">Event Date</Label>
-                                    <Input type="date" name="eventDate" id="eventDate" />
+                                <FormGroup row>
+                                    <Label htmlfor="eventDate" sm={3}>Event Date</Label>
+                                    <Col sm={9}>
+                                        <Input type="date" name="eventDate" id="eventDate" />
+                                    </Col>
                                 </FormGroup>
-                                <FormGroup>
-                                    <Label htmlfor="eventTime">Event Time</Label>
-                                    <Input type="time" name="eventTime" id="eventTime" />
+                                <FormGroup row>
+                                    <Label htmlfor="eventTime" sm={3}>Event Time</Label>
+                                    <Col sm={9}>
+                                        <Input type="time" name="eventTime" id="eventTime" />
+                                    </Col>
                                 </FormGroup>
-                                <FormGroup>
-                                    <Label htmlfor="eventDur">Event Duration</Label>
-                                    <Input type="select" name="eventDur" id="eventDur">
-                                        <option>Select</option>
-                                        <option value="1">1 Hr</option>
-                                        <option value="2">2 Hr</option>
-                                        <option value="3">3 Hr</option>
-                                        <option value="4">4 Hr</option>
-                                    </Input>
+                                <FormGroup row>
+                                    <Label htmlfor="eventDur" sm={3}>Event Duration</Label>
+                                    <Col sm={9}>
+                                        <Input type="select" name="eventDur" id="eventDur">
+                                            <option>Select</option>
+                                            <option value="1">1-2 Hr</option>
+                                            <option value="2">2-4 Hr</option>
+                                            <option value="3">4-6 Hr</option>
+                                        </Input>
+                                    </Col>
                                 </FormGroup>
-                                <FormGroup>
-                                    <Label htmlfor="Catering" sm={6}>Catering</Label>
-                                        <ButtonGroup >
-                                            <Button color="success" value="Food" onClick={() => this.setRSelected("Drinks")} active={this.state.rSelected === "Food"}>Food</Button>
-                                            <Button color="info"  value="Drinks" onClick={() => this.setRSelected("Food")} active={this.state.rSelected === "Drinks"} >Drinks</Button>
-                                            <Button value="Both"  onClick={() => this.setRSelected("Both")} active={this.state.rSelected === "Both"}>Both</Button>
-                                            <Button value="Neither" onClick={() => this.setRSelected("Neither")} active={this.state.rSelected === "Neither"}>Neither</Button>
-                                        </ButtonGroup>
+                                <FormGroup row>
+                                    <Label htmlfor="Catering" sm={3}>Catering</Label>
+                                    <Col sm={9}>
+                                        <Input type="select" name="Catering" id="Catering">
+                                            <option>Select</option>
+                                            <option value="Food">Food Only</option>
+                                            <option value="Drinks">Drinks Only</option>
+                                            <option value="Food and Drinks">Food and Drinks</option>
+                                            <option value="Nothing">Nothing</option>
+                                        </Input>
+                                    </Col>
                                 </FormGroup>
                                     <Button type="submit" value="submit" color="success">Request Info</Button>
                             </Form>
