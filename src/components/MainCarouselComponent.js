@@ -1,27 +1,7 @@
 import React, { Component } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselCaption, CarouselIndicators } from 'reactstrap';
+import { MainCarouselItems } from "../shared/MainCarouselItems"
 
-
-	const items = [
-    {  
-        src: '/assets/litbar.jpg',
-        altText: 'Lit Bar',
-        caption: 'Happy Hour deals served everyday from 3-5p',
-        header: 'Happy Hour Tuesdays'
-    },
-    {
-        src: '/assets/bookstore.jpg',
-        altText: 'Bookstore',
-        caption: '10% Off everything in the store every Tuesday',
-        header: '10% off Tuesdays'
-    },
-    {
-        src: '/assets/britvanishing.webp',
-        altText: 'Brit event',
-        caption: 'Brit Bennett reading',
-        header: 'Brit Reading event'
-    }
-];
 
 class MainCarousel extends Component {
 	constructor(props) {
@@ -44,13 +24,13 @@ class MainCarousel extends Component {
 
 	next() {
 		if (this.animating) return;
-		const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+		const nextIndex = this.state.activeIndex === MainCarouselItems.length - 1 ? 0 : this.state.activeIndex + 1;
 		this.setState({ activeIndex: nextIndex });
 	}
 
 	previous() {
 		if (this.animating) return;
-		const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+		const nextIndex = this.state.activeIndex === 0 ? MainCarouselItems.length - 1 : this.state.activeIndex - 1;
 		this.setState({ activeIndex: nextIndex });
 	}
 
@@ -62,7 +42,7 @@ class MainCarousel extends Component {
 	render() {
 		const { activeIndex } = this.state;
 
-		const slides = items.map((item) => {
+		const slides = MainCarouselItems.map((item) => {
 			return (
 				<CarouselItem
 					onExiting={this.onExiting}
@@ -86,7 +66,7 @@ class MainCarousel extends Component {
                             previous={this.previous}
                             fade
                         >
-                            <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                            <CarouselIndicators items={MainCarouselItems} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                             {slides}
                             <CarouselControl direction='prev' directionText='Previous' onClickHandler={this.previous} />
                             <CarouselControl direction='next' directionText='Next' onClickHandler={this.next} />
