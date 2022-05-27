@@ -10,13 +10,6 @@ import { connect } from 'react-redux';
 
 
 
-
-const mapStateToProps = state => {
-    return {
-    
-    };
-};
-
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -40,4 +33,4 @@ class Main extends Component {
 
     }
 }
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(Main);

@@ -159,7 +159,7 @@ class Restaurant extends Component {
                                     <ButtonGroup >
                                         <Button color="success" value="sitinside" onClick={() => this.setRSelected("sitinside")} active={this.state.rSelected === "sitinside"}>Inside</Button>
                                         <Button color="info"  value="sitoutside" onClick={() => this.setRSelected("sitoutside")} active={this.state.rSelected === "sitoutside"} >Outside</Button>
-                                        <Button value="siteither" value="siteither" onClick={() => this.setRSelected("siteither")} active={this.state.rSelected === "siteither"}>Either</Button>
+                                        <Button color="primary" value="siteither" onClick={() => this.setRSelected("siteither")} active={this.state.rSelected === "siteither"}>Either</Button>
                                     </ButtonGroup>
                                 </Col>
                             </FormGroup>
