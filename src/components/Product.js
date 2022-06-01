@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card, CardBody, CardFooter, CardImg, Col } from 'reactstrap';
 
 class Product extends Component {
 
@@ -17,9 +18,9 @@ class Product extends Component {
         console.log("render - Product");
 
         return (
-            <div className="col-lg-6">
-                <div className="card m-2">
-                    <div className="card-body">
+            <Col>
+                <Card className="m-5">
+                    <CardBody>
                         <div className="text-muted"> # {this.state.product.id}
                         <span className="pull-right hand-icon" onClick={()=> {this.props.onDelete(this.state.product)}}>
                             <i className="fa fa-times"></i>
@@ -29,8 +30,9 @@ class Product extends Component {
                         <h5 className="pt-2 border-top">{this.state.product.productName}</h5>
 
                         <div>$ {this.state.product.price}</div>
-                    </div>
-                    <div className="card-footer text-right">
+                        <img className='eventimg' src={this.state.product.image} />
+                    </CardBody>
+                    <CardFooter className="text-right">
                         <div className="float-left">
                             <span className="badge">{this.state.product.quantity}</span>
 
@@ -53,9 +55,9 @@ class Product extends Component {
                         </div>
                         <div className="float-right">{this.props.children}</div>
                     
-                    </div>
-                </div>
-        </div>
+                    </CardFooter>
+                </Card>
+        </Col>
         );
     }
 }

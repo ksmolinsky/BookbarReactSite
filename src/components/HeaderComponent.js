@@ -53,9 +53,16 @@ class Header extends Component {
                                     <i className="fa fa-cutlery fa-lg"/> Restaurant 
                                 </NavLink>
                             </NavItem>
+                            <NavItem>
                                 <NavLink className="nav-link" to="/events">
                                     <i className="fa fa-calendar-o fa-lg"/> Events
                                 </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to="/shop">
+                                    <i className="fa fa-calendar-o fa-lg"/> Shop
+                                </NavLink>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                     </div>

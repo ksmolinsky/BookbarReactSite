@@ -5,6 +5,7 @@ import Home from './HomeComponent';
 import About from './AboutComponent';
 import Restaurant from './RestaurantComponent';
 import Events from './EventComponent';
+import Shop from './Shop';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -25,6 +26,7 @@ class Main extends Component {
                   <Route path='/aboutus' component={About} />
                   <Route path='/restaurant' component={Restaurant} />
                   <Route path='/events' component={Events} />
+                  <Route path='/shop' component={Shop} />
                   <Redirect to='/home' />
                 </Switch>
                 <Footer />

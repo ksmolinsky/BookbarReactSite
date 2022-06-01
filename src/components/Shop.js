@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
+import {Container, Row, Col, Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import { Link } from 'react-router-dom';
 import Product from './Product';
+import { products } from '../shared/Products';
 
 class Shop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: [
-
-            ],
+            products
         }
     }
     render() {
         return (
-            <div className="container-fluid">
-                <h4>Shop</h4>
-                <div className="row">
+            <React.Fragment>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Breadcrumb>
+                                <BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
+                                <BreadcrumbItem active>Shop</BreadcrumbItem>
+                            </Breadcrumb>
+                            <h2 className="breadcrumb-title">Shop</h2>
+                            <hr />
+                        </Col>
+                    </Row>
+                </Container>
+                <Container>
+                <Row>
                     {this.state.products.map((prod) => {
                         return(
                             <Product
@@ -28,22 +41,12 @@ class Shop extends Component {
                             </Product>
                         )
                     })}
-                </div>
-            </div>
+                </Row>
+            </Container>
+            </React.Fragment>
         )
     }
 
-    componentDidMount = async () => {
-        //fetch data from data source
-
-        var response = await fetch("http://localhost:5001/product", {method: "GET"});
-        var prods = await response.json();
-        console.log(prods);
-
-        this.setState({ products: prods });
-        
-        //console.log("componentDidMount-ShoppingCart")
-    }
 
     handleIncrement = (product, maxValue) => {
         //get index of selected product
