@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {Container, Row, Col, Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import {Container, Row, Col, Breadcrumb, BreadcrumbItem, Alert, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Product from './Product';
 import { products } from '../shared/Products';
+import { toast } from 'react-toastify';
 
 class Shop extends Component {
     constructor(props) {
@@ -10,7 +11,22 @@ class Shop extends Component {
         this.state = {
             products
         }
+
+        this.toggleAlert = this.toggleAlert.bind(this);
+        this.toggleToast = this.toggleToast.bind(this);
+
     }
+
+    toggleAlert() {
+        this.setState({
+            isAlertOpen: !this.state.isAlertOpen
+        })
+    }
+
+   toggleToast() {
+        toast.success("This item has been added to your Shopping Cart!", {toastId: "addtocart", theme: "colored", hideProgressBar: true});
+   }
+
     render() {
         return (
             <React.Fragment>
@@ -35,12 +51,12 @@ class Shop extends Component {
                             product={prod}
                             onIncrement={this.handleIncrement}
                             onDecrement={this.handleDecrement}
-                            onDelete={this.handleDelete}
                             >
-                            <button className="btn btn-primary">Buy Now</button>
+                            <Button color="success" size="lg" onClick={this.toggleToast}>Add to Cart</Button>
                             </Product>
                         )
                     })}
+
                 </Row>
             </Container>
             </React.Fragment>
@@ -75,22 +91,10 @@ class Shop extends Component {
      };
     }
 
-    handleDelete = (product) => {
-        //get index of selected product
-        let allProducts = [...this.state.products];
-        let index = allProducts.indexOf(product);
-
-        if(window.confirm("are you sure to delete?")){
-
-        //delete product based on index
-        allProducts.splice(index, 1);
-
-        //update the state of current component (parent component)
-        this.setState({ products: allProducts});
-        }
-    }
-
-
 }
+
+
+
+
 
 export default Shop

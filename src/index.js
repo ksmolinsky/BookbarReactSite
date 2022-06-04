@@ -5,8 +5,10 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-redressed';
 import 'typeface-josefin-sans';
-import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
+import 'react-toastify/dist/ReactToastify.css';
+import 'font-awesome/css/font-awesome.css';
+
 import App from './App';
 
 ReactDOM.render(

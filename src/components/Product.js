@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardFooter, CardImg, Col } from 'reactstrap';
+import { Card, CardBody, CardFooter, Col } from 'reactstrap';
 
 class Product extends Component {
 
@@ -12,8 +12,8 @@ class Product extends Component {
             product: this.props.product,
         };
     }
-  
 
+    
     render() {
         console.log("render - Product");
 
@@ -54,7 +54,6 @@ class Product extends Component {
                             </div>
                         </div>
                         <div className="float-right">{this.props.children}</div>
-                    
                     </CardFooter>
                 </Card>
         </Col>

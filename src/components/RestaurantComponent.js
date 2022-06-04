@@ -54,18 +54,19 @@ class Restaurant extends Component {
 
 
     toggleModal() {
-        this.setState({
+           this.setState({
             isModalOpen: !this.state.isModalOpen
         })
-    }
-
+        }
 
     handleReservation(event) {
-        alert("Your Reservation is booked!");
+        alert('Your table is booked!');
         this.toggleModal();
         event.preventDefault();
-        
     }
+
+
+        
 
     render() {
         const { showBrunchMenu, showAllDayMenu, showHHMenu } = this.state;
@@ -125,7 +126,7 @@ class Restaurant extends Component {
                     </Row>
                 </Container>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader className="ReservationHeader" toggle={this.toggleModal}>Reserve A Table</ModalHeader>
+                    <ModalHeader className="ReservationHeader" >Reserve A Table</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.handleReservation}>
                             <FormGroup row>
@@ -163,8 +164,9 @@ class Restaurant extends Component {
                                     </ButtonGroup>
                                 </Col>
                             </FormGroup>
-                                <Button type="submit" value="submit" color="primary">Find a Table</Button>
+                                <Button type="submit" value="submit" color="primary">Find a Table</Button> 
                         </Form>
+                        
                     </ModalBody>
                 </Modal>
             </React.Fragment>

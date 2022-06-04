@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Label, Button } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { toast } from 'react-toastify';
 
 const required = val => val && val.length;
 const validEmail = val => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 function Footer(props) {
+    const signup = () => toast.success("You're signed up for the newsletter!", { theme: "dark", position: "bottom-right", hideProgressBar: true});
     return (
         <footer className="site-footer">
             <div className="container">
@@ -26,7 +28,7 @@ function Footer(props) {
                         <a className="btn btn-social-icon" href="http://instagram.com/"><i
                         className="fa fa-instagram"></i></a>
                         <a className="btn btn-social-icon" href="http://facebook.com/"><i
-                        className="fa fa-facebook"></i></a>
+                        className="fa fa-instagram"></i></a>
                         <a className="btn btn-social-icon" href="http://twitter.com/"><i
                         className="fa fa-twitter"></i></a>
                         <a className="btn btn-social-icon" href="http://yelp.com/"><i
@@ -52,7 +54,7 @@ function Footer(props) {
                                     validEmail: 'Invalid Email Address'
                                 }}
                                 />
-                                <Button className="btn-sm btn-secondary ml-2 mb-2">Sign up</Button>
+                                <Button className="btn-sm btn-secondary ml-2 mb-2" onClick={signup}>Sign up</Button>
                         </LocalForm>
                     </div>
                 </div>
